@@ -39,9 +39,10 @@ class connect:
             
             print(error)
     def csvcreator(data):
-        df = pd.DataFrame(data)
+        df = pd.DataFrame(data,columns = ["1","2","3","4"])
+        # df.drop("0", inplace = True, axis=1)
         print(df)
-        df.to_csv("//opt//airflow//plugins//lib//mlpipeline//model_data_input.csv",header = None,index=False)
+        df.to_csv("plugins//lib//mlpipeline//model_data_input.csv",header = None,index=False)
         logger = logging.getLogger(__name__)
         logger.info("Data is fetched for model retraining")
 
